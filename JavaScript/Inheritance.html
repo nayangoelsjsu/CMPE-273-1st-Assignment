@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Attendance Details</title>
+</head>
+<body onload="start()">
+
+Nayan <input type="button" name="present" onclick="pres(0)" value="Present">
+<input type="button" name="submit" onclick="clicked(0)" value="Total Attendance"><br>
+
+Mayar <input type="button" name="present" onclick="pres(1)" value="Present">
+<input type="button" name="submit" onclick="clicked(1)" value="Total Attendance"><br>
+
+Kumar <input type="button" name="present" onclick="pres(2)" value="Present">
+<input type="button" name="submit" onclick="clicked(2)" value="Total Attendance"><br>
+
+Nayar <input type="button" name="present" onclick="pres(3)" value="Present">
+<input type="button" name="submit" onclick="clicked(3)" value="Total Attendance"><br>
+
+Ranar <input type="button" name="present" onclick="pres(4)" value="Present">
+<input type="button" name="submit" onclick="clicked(4)" value="Total Attendance">
+
+<div id="div1">
+	
+</div>
+
+<script type="text/javascript">
+	
+	var att= [];
+
+	var Stud={
+		name:"",
+		sid:"",
+		attendance:0,
+	};
+
+	function Student(name,sid){
+		this.name=name;
+		this.sid=sid;
+		this.attendance=0;
+	}
+	Student.__proto__=Stud;
+
+	Student.prototype.present=  function(){
+			console.log(this);
+			this.attendance= this.attendance+1;
+		}
+
+	Student.prototype.totalattend= function(){
+			return this.attendance;
+		}
+	console.log(Object.getPrototypeOf(Student));
+	function start(){
+		
+		att[0] = new Student("nayan",001);
+		att[0].present();
+		console.log(att[0].totalattend());		
+		att[1] = new Student("mayar",002);
+		att[2] = new Student("Kumar",003);
+		att[3] = new Student("Nayar",004);
+		att[4] = new Student("Ranar",005);
+
+		console.log("data ready");
+	}
+	
+	function clicked(num){
+		console.log(att[num].totalattend());
+		document.getElementById('div1').innerHTML="Name: " +att[num].name+ ", Student ID: " + att[num].sid+ ", Attendance: "+ att[num].totalattend();
+		}
+	
+	function pres(num) {
+		att[num].present();
+		}
+
+</script>
+</body>
+</html>

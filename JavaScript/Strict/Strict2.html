@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Strict Mode</h1>
+<input type="text" name="Celsius" id="Cel1">
+<input type="button" name="convert2" value="Convert" onclick="convert()">
+<div id="div1"></div>
+
+<script type="text/javascript">
+	"use strict";
+	function convert(){
+		var x= document.getElementById('Cel1');
+		var cel=x.value;
+		delete x;
+		var far= cel*1.8+32;
+		document.getElementById('div1').innerHTML="The Farenheit value is: "+far;
+	}
+</script>
+</body>
+</html>

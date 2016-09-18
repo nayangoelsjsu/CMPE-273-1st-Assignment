@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Enter 2 numbers a and b. Check if a is divisible by b and by how much.</title>
+</head>
+<body>
+<h1>To check divisibility</h1>
+Enter number a: <input type="text" name="a" id="a"><br>
+Enter number b: <input type="text" name="b" id="b"><br>
+<input type="button" name="submit" value="Check" onclick="check()"><br>
+<div id="div1">
+	
+</div>
+<script type="text/javascript">
+	function check(){
+		var a= document.getElementById('a').value;
+		var b= document.getElementById('b').value;
+		var c;
+		if(a%b==0){
+			c=a/b;
+			document.getElementById('div1').innerHTML=a+ " is divisible "+c+" times by "+b;
+		}
+		else{
+			document.getElementById('div1').innerHTML="Not Divisible";
+		}
+	}
+</script>
+</body>
+</html>

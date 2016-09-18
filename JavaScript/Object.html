@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Employee Detais</title>
+</head>
+<body>
+
+<input type="text" name="name" id="n1" placeholder="Enter Employee Name">
+<input type="button" name="submit" onclick="obj()" value="Get Details">
+<div id="div1"></div>
+<script type="text/javascript">
+	function obj() 
+	{
+		var Employee=
+		{
+			nayan:{
+				code: "E1",
+				age: 22,
+				department: "Software Dev"
+				
+			},
+			tirath:{
+				code: "E2",
+				age: 21,
+				department: "Software Dev"
+				
+			},
+			milan:{
+				code: "E3",
+				age: 27,
+				department: "Software Dev"
+				
+			},
+			vivek:{
+				code: "E4",
+				age: 23,
+				department: "Software Dev"
+				
+			},
+			abhisek:{
+				code: "E5",
+				age: 28,
+				department: "Software Dev"
+				
+			}
+		}
+		var name=document.getElementById('n1').value;
+		name=name.toLowerCase();
+		if (Employee[name]==null){
+			details="Not a Valid Employee name";
+		}
+		else{
+			var details= "Name="+ name+", Employee ID= "+ Employee[name].code+", Age="+Employee[name].age+", Department="+Employee[name].department;
+		}
+
+		document.getElementById('div1').innerHTML= details;
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Square Root</title>
+</head>
+<body>
+Enter the number: <input type="text" name="number" id="n1">
+<div id="div1"></div>
+<input type="button" name="submit" value="submit" onclick="check()">
+
+<script type="text/javascript">
+	function check()
+	{
+		try{
+				var num= document.getElementById('n1').value;
+				if(num=="")
+				{
+					throw "Enter a number";
+				}
+				if(isNaN(num)){
+					throw "Please Enter a Number";
+				}
+				num=Number(num);
+				if(num<0){
+					throw "Sqaure Root of Negative Numbers is not possible";
+				}
+				else{
+					var x= Math.sqrt(num);
+					var str= "The Sqaure Root of the entered number is:"+x;
+					document.getElementById('div1').innerHTML= str;
+				}
+		}
+		catch(ex){
+					document.getElementById('div1').innerHTML=ex;
+		}
+	}
+</script>
+</body>
+</html>

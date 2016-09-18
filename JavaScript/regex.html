@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<h1>Validate SSN</h1>
+Enter Name: <input type="text" id="name"><br>
+Enter SSN: <input type="text" id="ssn"><br>
+<input type="button" name="submit" value="Check" onclick="check()"><br>
+<div id="div1">
+	
+</div>
+<script type="text/javascript">
+	function check(){
+		var a= document.getElementById('name').value;
+		var b= document.getElementById('ssn').value;
+		var c;
+		var patt=/(^\d{3}-\d{2}-\d{4}$)/;
+		var res=patt.test(b);
+		console.log(res);
+		if(res)
+		{
+			document.getElementById('div1').innerHTML="SSN is valid";
+		
+		}
+		else{
+			document.getElementById('div1').innerHTML="SSN is not valid";
+		}
+	}
+</script>
+</body>
+</html>
+
+
+

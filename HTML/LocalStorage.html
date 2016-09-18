@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Form</title>
+</head>
+<body onload="reader()" onbeforeunload="writer()">
+	UserName: <input type="text" name="username" id="un"><br>
+	Student ID: <input type="text" name="ID" id="ID"> <br>
+	Password: <input type="password" name="password" id="pass"><br>
+	<input type="submit" name="submit" value="Submit">
+
+<script type="text/javascript">
+	function writer(){
+		localStorage.setItem("username",document.getElementById('un').value);
+		localStorage.setItem("studid",document.getElementById('ID').value);
+		localStorage.setItem("password",document.getElementById('pass').value);
+	}
+	function reader(){
+		if(localStorage==null){
+			console.log("NULL");
+		}
+		else{
+			document.getElementById('un').value= localStorage.getItem("username");
+			document.getElementById('ID').value= localStorage.getItem("studid");
+		}
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Distance between two coordinates</title>
+</head>
+<body>
+enter latitude of destination: <input type="text" name="latitude" id="l1"><br>
+enter longitude of destination: <input type="text" name="longitude" id="l2"><br>
+<input type="button" name="Get" value="Get Location" onclick="currentlocation()"><br>
+<div id="div1">
+</div>
+
+<script type="text/javascript">
+	function currentlocation(){
+		navigator.geolocation.getCurrentPosition(function(pos){
+			var lat1= pos.coords.latitude;
+			var long1= pos.coords.longitude;
+			var lat2=document.getElementById('l1').value;
+			var long2=document.getElementById('l2').value;
+			var dist= Math.sqrt((((lat1-lat2)*(lat1-lat2))+((long1-long2)*(long1-long2))));
+			var str="latitude: "+ lat1 + "longitude: "+long1+"and distance betwenn the two locations is ="+dist;
+			document.getElementById("div1").innerHTML=str;
+		});
+	}
+
+</script>
+</body>
+</html>

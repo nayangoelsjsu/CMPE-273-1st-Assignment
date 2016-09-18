@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Library Registration</title>
+</head>
+<body>
+<form action="inputresult.html">
+	Name: <input type="text" id="name" autofocus required><br>
+	SJSU ID: <input type="number" id="sjsuid" required><br>
+	Phone Number: <input type="tel" id="telephone" pattern="^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$" required><br>
+	Alternate Phone Number: <input type="tel" id="atelephone" pattern="^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$"><br>
+	Email ID: <input type="email" id="email" required><br>
+	Gender: <br>
+	<input type="radio" name="gender" value="male" id="male" checked required>Male<br>
+	<input type="radio" name="gender" value="female" id="female" required> Female<br>
+	<input type="radio" name="gender" value="other" id="other" required> Other<br>
+	DOB: <input type="date" id="date" required><br>
+	<input type="submit" value="Submit">
+</form>
+</body>
+</html>

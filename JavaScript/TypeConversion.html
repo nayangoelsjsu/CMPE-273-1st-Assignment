@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Palindrome</title>
+</head>
+<body>
+<h1>Palindrome</h1>
+Enter the number/ string to be checked<input type="text" name="str" id="str1">
+<input type="button" name="check" value="Check" onclick="check()">
+<div id="div1"></div>
+
+<script type="text/javascript">
+function check(){
+	var str= document.getElementById('str1').value;
+	var flag=0;
+	str=str.toString();
+	if ((str.length)%2==0) {
+		document.getElementById('div1').innerHTML="Not a Palindrome";
+	}
+	else{
+		var n= Math.floor(str.length/2);
+		for(var i=0;i<n;i++){
+			if(str.charAt(i)==str.charAt((str.length-1)-i));
+			else{
+				flag=1;
+			}
+		}
+		if(flag==0){
+		document.getElementById('div1').innerHTML="Palindrome";			
+		}
+		else{
+		document.getElementById('div1').innerHTML="Not a Palindrome";
+		}
+	}
+}
+</script>
+</body> 
+</html>

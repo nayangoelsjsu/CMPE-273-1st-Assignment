@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Car Details for DMV</title>
+</head>
+<body onload="start()">
+Enter car number <input type="text" name="number" id="n1">
+<input type="button" name="b1" onclick="details()" value="Get Details">
+<div id="div1">
+</div>
+<script type="text/javascript">
+	var text;
+	function start(){
+		text=[
+		{
+			"number":"001",
+			"name":"Mustang",
+			"owner":"Tirath",
+			"Address":"California",
+			"Phone":"9876543210"
+		},
+
+		{
+			"number":"002",
+			"name":"X5",
+			"owner":"Nayan",
+			"Address":"California",
+			"Phone":"9876544210"
+		},
+
+		{
+			"number":"003",
+			"name":"Q7",
+			"owner":"Vivek",
+			"Address":"New York",
+			"Phone":"9876545210"
+		},
+
+		{
+			"number":"004",
+			"name":"Beat",
+			"owner":"Abhisek",
+			"Address":"Chicago",
+			"Phone":"9876546210"
+		},
+
+		{
+			"number":"005",
+			"name":"Dodge",
+			"owner":"Milan",
+			"Address":"Atlanta",
+			"Phone":"9876547210"
+		}
+
+		];
+
+	}
+
+	function details(){
+		var num= document.getElementById('n1').value;
+		var i;
+		for(i=0;i<text.length;i++){
+			if(text[i].number==num){
+				document.getElementById('div1').innerHTML= "Number: "+ text[i].number + ", Name: "+ text[i].name+  ", Owner: "+ text[i].owner+ ", Address:"+ text[i].Address+ ", Phone: "+ text[i].Phone;
+				break;
+			}
+		}
+		if(i==text.length){
+			document.getElementById('div1').innerHTML="The Car Number you entered does not exist";
+		}		
+	}
+
+</script>
+</body>
+</html>

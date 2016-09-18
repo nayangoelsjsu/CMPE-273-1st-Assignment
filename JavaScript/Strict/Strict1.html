@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Celsius to Farenheit</title>
+</head>
+<body>
+<h1>Non Strict Mode</h1>
+<input type="text" name="Celsius" id="Cel1">
+<input type="button" name="convert1" value="Convert" onclick="convert1()">
+<div id="div1"></div>
+
+<script type="text/javascript">
+	
+	function convert1(){
+		var x= document.getElementById('Cel1');
+		var cel=x.value;
+		delete x;
+		var far= cel*1.8+32;
+		document.getElementById('div1').innerHTML="The Farenheit value is: "+far;
+	}
+</script>
+
+</body>
+</html>

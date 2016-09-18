@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>a to the power p</title>
+</head>
+<body>
+Enter Number: <input type="text" name="a" id="a"><br>
+Enter Power: <input type="text" name="p" id="p"><br>
+<input type="button" name="submit" value="Get Power" onclick="power()">
+<div id="div1"></div>
+<script type="text/javascript">
+	function power(){
+		var a = document.getElementById("a").value;
+		var p = document.getElementById("p").value;
+		var pow=a;
+		var i=1;
+		for(i=1;i<p;i++){
+			pow=pow*a;
+		}
+		document.getElementById("div1").innerHTML="The answer is= "+pow;
+		pow=0;
+	}
+</script>
+</body>
+</html>
